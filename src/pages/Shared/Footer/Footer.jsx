@@ -1,5 +1,4 @@
-import logo from '../../../assets/logo.svg'
-
+import logo from '../../../assets/logo.svg';
 const Footer = () => {
     return (
         <footer className="footer p-10 bg-base-200 text-base-content">
