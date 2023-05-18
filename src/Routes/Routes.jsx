@@ -14,24 +14,24 @@ const router = createBrowserRouter([
       children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home/>
         }, 
         {
             path: 'login', 
-            element: <Login></Login>
+            element: <Login/>
         }, 
         {
             path: 'signup', 
-            element: <SignUp></SignUp>
+            element: <SignUp/>
         },
         {
           path: 'book/:id', 
-          element: <BookService></BookService>, 
-          loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+          element: <PrivateRoute><BookService/></PrivateRoute>,
+          loader: ({params}) => fetch(`https://car-doctor-server-rho-pink.vercel.app//services/${params.id}`)
         },
         {
           path: 'bookings', 
-          element: <PrivateRoute><Bookings></Bookings></PrivateRoute>
+          element: <PrivateRoute><Bookings/></PrivateRoute>
         }
       ]
     },
